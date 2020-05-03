@@ -30,6 +30,19 @@ public class thymeleafController {
         return "/home/thymeleafView";
     }
 
+    @GetMapping(value = "thymeleafView2")
+    public String thymeleafView2(Model model){
+        Map<String, Object> mapData = new HashMap<>();
+        mapData.put("name","nateen");
+        mapData.put("age",20);
+        mapData.put("address","판교");
+
+        model.addAttribute("data",mapData);
+
+        return "/home/thymeleafView2";
+    }
+
+
 
 
 }
