@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div th:if="${data.age} > 20">나이가 20살 이상일 경우 출력</div>
+<div th:unless="${data.age} > 20">나이가 20살 이하일 경우 출력</div>
+<br/>
+<div th:text="${data.age} > 20 ? '20이상' : '20이하' "></div>
+
+</body>
+</html>

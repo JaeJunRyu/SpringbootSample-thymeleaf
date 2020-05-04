@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <input type="text" th:value="${data.name}">
+    <br/>
+    <input type="text" th:attr="value=${data.name}">
+    <br/>
+    <input type="text" th:id="${data.name}" th:value="${data.name}">
+    <br/>
+    <input type="text" th:maxlength="10" th:style="'width:500px'" >
+    <br/>
+    <img th:title="${data.name}" th:alt="${data.address}"  />
+    <br/>
+    <input th:type="text" th:value="${data.name}" >
+
+    <div th:data="${data.name}"></div>
+    <div th:data-name="${data.name}"></div>
+</body>
+</html>

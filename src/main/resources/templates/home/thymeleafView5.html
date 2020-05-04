@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div th:if="${data.age == 20 and data.name == 'nateen'}">and문 실행</div>
+<div th:if="${data.age == 21 and data.name == 'test'}">두번째 and문 실행</div>
+
+<div th:if="${data.age == 20 or data.name == 'test'}">or문 실행</div>
+<div th:if="${data.age == 21 or data.name == 'nateen'}">두번째 or문 실행</div>
+</body>
+</html>

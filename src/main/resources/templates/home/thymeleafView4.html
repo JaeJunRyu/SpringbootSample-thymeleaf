@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div th:switch="${data.age}">
+    <span th:case="19">19살</span>
+    <span th:case="20">20살</span>
+    <span th:case="21">21살</span>
+    <span th:case="*">그외</span>
+</div>
+
+</body>
+</html>
