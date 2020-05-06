@@ -9,15 +9,26 @@
     <br/>
     <input type="text" th:attr="value=${data.name}">
     <br/>
-    <input type="text" th:id="${data.name}" th:value="${data.name}">
+    <input type="text" th:id="${data.name}" th:name="${data.name}" th:value="${data.name}">
     <br/>
-    <input type="text" th:maxlength="10" th:style="'width:500px'" >
-    <br/>
-    <img th:title="${data.name}" th:alt="${data.address}"  />
+    <input type="text" th:maxlength="10" th:style="'width:300px'" >
     <br/>
     <input th:type="text" th:value="${data.name}" >
-
+    <br/>
+    <img th:src="test.png" th:title="${data.name}" th:alt="${data.address}" />
+    <br/>
     <div th:data="${data.name}"></div>
+    <br/>
     <div th:data-name="${data.name}"></div>
+    <br/>
+    <div data-th-name="${data.name}"></div>
+    <br/>
+    <div data-th-text="${data.name}"></div>
+    <br/>
+    <div class="parentClass" th:classappend="'childClass'"></div>
+    <br/>
+    <div class="parentClass" th:classappend="${data.name} ? 'addClass'"></div>
+    <br/>
+    <div class="parentClass" th:attrappend="class=${' '+ 'addClass'}"></div>
 </body>
 </html>
