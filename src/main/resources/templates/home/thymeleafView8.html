@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<script>
+    var data1_name = '${data1.name}';   //실행 안됨
+    var data1_name1 = [[${data1.name}]];      //전지현
+    // var data2_name = [${data2.name}];        //문법 에러
+    //var data3_name = ${data3.name};          //문법 에러
+    var data3_name1 = /*[[${data3.name}]]*/  //주석으로 실행됨
+</script>
+
+<script th:inline="javascript">
+
+    var datalist = [[${dataList}]] ;
+
+    datalist.forEach(item => console.log(item));
+
+</script>
+
+
+</body>
+</html>

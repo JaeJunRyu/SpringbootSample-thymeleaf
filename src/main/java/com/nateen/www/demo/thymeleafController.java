@@ -130,6 +130,26 @@ public class thymeleafController {
 
 
 
+    @GetMapping(value = "thymeleafView8")
+    public String thymeleafView8(Model model) {
+        Person person1 = new Person("전지현",30,"강남");
+        Person person2 = new Person("김태희",31,"강북");
+        Person person3 = new Person("진세연",20,"서초");
+
+        List<Person> personList = new ArrayList<>();
+        personList.add(person1);
+        personList.add(person2);
+        personList.add(person3);
+
+        model.addAttribute("data1",person1);
+        model.addAttribute("data2",person2);
+        model.addAttribute("data3",person3);
+
+        model.addAttribute("dataList",personList);
+
+        return "/home/thymeleafView8";
+    }
+
 
 
 
