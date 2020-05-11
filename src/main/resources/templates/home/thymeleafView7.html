@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <table border="1">
+        <tr>
+            <th>이름</th>
+            <th>나이</th>
+            <th>주소</th>
+            <th>비고</th>
+        </tr>
+        <tr th:each="person : ${dataList}" th:class="${personStat.odd}? 'oddClass'">
+            <td th:text="${person.name}"></td>
+            <td th:text="${person.age}"></td>
+            <td th:text="${person.address}"></td>
+            <td th:text="${person.age > 20} ? '20이상' : '20이하'"></td>
+        </tr>
+
+    </table>
+    <br/>
+    <table border="1">
+        <tr th:each="person,iterStat : ${dataList}">
+            <td th:text="${'index : ' + iterStat.index}"></td>
+            <td th:text="${'count : ' + iterStat.count}"></td>
+            <td th:text="${'size : ' + iterStat.size}"></td>
+            <td th:text="${'current : ' + iterStat.current}"></td>
+            <td th:text="${'even : ' + iterStat.even}"></td>
+            <td th:text="${'odd : ' + iterStat.odd}"></td>
+            <td th:text="${'first : ' + iterStat.first}"></td>
+            <td th:text="${'last : ' + iterStat.last}"></td>
+        </tr>
+    </table>
+
+
+</body>
+</html>

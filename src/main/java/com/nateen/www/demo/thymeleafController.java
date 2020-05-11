@@ -1,10 +1,14 @@
 package com.nateen.www.demo;
 
+import lombok.Getter;
+import lombok.Setter;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 @Controller
@@ -91,5 +95,43 @@ public class thymeleafController {
 
         return "/home/thymeleafView6";
     }
+
+
+    @GetMapping(value = "thymeleafView7")
+    public String thymeleafView7(Model model) {
+        Person person1 = new Person("전지현",30,"강남");
+        Person person2 = new Person("김태희",31,"강북");
+        Person person3 = new Person("진세연",20,"서초");
+
+        List<Person> personList = new ArrayList<>();
+        personList.add(person1);
+        personList.add(person2);
+        personList.add(person3);
+
+        model.addAttribute("dataList",personList);
+
+        return "/home/thymeleafView7";
+    }
+
+
+    @Getter
+    @Setter
+    class Person {
+        private String name;
+        private Integer age;
+        private String address;
+
+        public Person(String name, Integer age, String address) {
+            this.name = name;
+            this.age = age;
+            this.address = address;
+        }
+    }
+
+
+
+
+
+
 
 }
